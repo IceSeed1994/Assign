@@ -1,6 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+
 #title {
-    margin-left: 200px;
     font-size: 27px;
+}
+
+body {
+    opacity: 0.1;
+}
+
+.dark-mode {
+    background: black;
 }
 
 #navlist {
@@ -43,9 +54,17 @@ section {
     color: whitesmoke;
 }
 
+p {
+    text-align: justify;
+}
+
 .events img {
     width: 450px;
     height: 338px;
+}
+
+.events .ctn {
+    margin-top: 50px;
 }
 
 .banner .ctn {
@@ -139,11 +158,46 @@ section {
     margin-top: 30px;
 }
 
-
 .gallery img {
-    width: 300px;
-    height: 200px;
-    margin: 10px;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.carousel-container {
+    width: 55%;
+    margin: auto;
+    border: 5px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 410px;
+    height: 400px;
+}
+
+#prevBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .footer {
