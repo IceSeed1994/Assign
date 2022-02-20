@@ -13,17 +13,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
-<body>
+<style src="script.js"></style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+<!-- <script>
+  const t1 = new TimeLineMax();
+  const banner = document.querySelector("#home");
+  t1.fromTo(banner, 1, {height: "0%"}, {height: "80%", ease: Power2.easeInOut})
+  // .fromTo(bann, 1.2, {width: "100%"}, {width: "80%", ease: Power2.easeInOut})
+  </script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  var opacity = 0;
+  var intervalID = 0;
+  window.onload = fadeIn;
+
+  function fadeIn() {
+      setInterval(show, 30);
+  }
+
+  function show() {
+      var body = document.getElementById("body");
+      opacity = Number(window.getComputedStyle(body)
+                       .getPropertyValue("opacity"));
+      if (opacity < 1) {
+          opacity = opacity + 0.05;
+          body.style.opacity = opacity
+      } else {
+          clearInterval(intervalID);
+      }
+  }
+</script>
+
+<script> 
+  $(document).ready(function(){
+    
+      $("a").on('click', function(event) {
+    
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+            window.location.hash = hash;
+          });
+        } 
+      });
+    });
+      </script>
+<body id="body">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" id="title">
+          <a class="navbar-brand mx-lg-5" href="#" id="title">
             <img src="./mnt.png" alt="" width="38" height="32" class="d-inline-block align-text-top">
             AlmaTrip
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto" id="navlist">
               <li class="nav-item">
@@ -43,7 +93,7 @@
         </div>
       </nav>
 
-<header class="banner w-100 text-center d-flex align-items-center" id="home">
+<header class="banner w-100 text-center d-flex align-items-center" id="home"> 
     <div class="card-transparent text-center col align-self-center" style="background-color: beige; opacity: 0.75;">
         <div class="card-body pb-3">
           <h2 class="card-title m-5 fw-bold" style="font-size: 4vmin;">Explore Almaty</h2>
@@ -69,7 +119,7 @@
           <div class="card-body">
             <h4 class="card title border-0"> Trip to Kaiyndy Lake </h4>
             <p class="card-text">On the territory of Kainda there are several popular locations that you can visit. These include the observation deck "Panorama" where a picturesque view of the expanse of water opens, as well as the "Gate of Desires".</p>
-            <a href="#" class="btn btn-dark"> Learn more </a>
+            <a href="#" class="ctn my-auto"> Learn more </a>
       </div>
     </div>
   </div>
@@ -79,19 +129,19 @@
           <div class="card-body">
             <h4 class="card title border-0"> Trip to Assy Plateau </h4>
             <p class="card-text text-justify">The main feature of the natural location is the Assy-Turgen astrophysical observatory (2750 meters), which was built in 1975. The structure was built here due to the ideal astroclimate and the absence of light pollution.</p>
-            <a href="#" class="btn btn-dark mt-1"> Learn more </a>
+            <a href="#" class="ctn mt-1"> Learn more </a>
       </div>
     </div>
   </div>
   </div>
   </div>
 </div>
-</section>
+</section> 
 
 
 
 <section class="places container-fluid d-flex align-items-left text-center" id="place">
-  <div class="card-transparent ms-lg-4 col-lg-6" style="background-color: beige; opacity: 0.75;">
+  <div class="card-transparent ms-lg-4 col-lg-5" style="background-color: beige; opacity: 0.75;">
     <div class="card-body align-items-center">
       <h1 class="card-title text-center" style="font-size: 7vmin;">Charyn Canyon</h1>
       <div class="line"></div>
@@ -110,23 +160,23 @@
         <h1>Gallery: What You Can Expect</h1>
         <div class="line my-4"></div>
         <p style="text-align: justify; margin-right: 20px;" class="mb-3"> GoAlmaty opens up new horizons for everyone who wants to expand their horizons and see Kazakhstan. Our company will help you rediscover this beauty of the world, take a break from the gray life and become the main character of a fairy tale called "journey".</p>
-        <a href="#" class="btn btn-dark my-4"> See More </a>
+        <a href="#" class="ctn"> See More </a>      
       </div>
     </div>
-          <div class="col d-flex flex-column">
+          <div class="col d-flex flex-column"> 
           <div class="image-gallery">
-              <img src="./camp1.png" alt="">
-              <img src="./camp2.jpg" alt="">
-              <img src="./camp3.jpg" alt="">
-              <img src="./pik1.webp" alt="">
+              <img src="./camp1.png" alt=""> 
+              <img src="./camp2.jpg" alt=""> 
+              <img src="./camp3.jpg" alt=""> 
+              <img src="./pik1.webp" alt=""> 
           </div>
       </div>
   </div>
 </section>
 
 <section class="footer">
-  <p> The authors of this website do not claim the ownership of the images within the website and do not attempt to use them for commercial purposes. </p>
-  <p> Copyright 2022 done by AITU BD-2101 students: Nursat Kenges, Nurlybek Omen, Almas Aitken</p>
+  <p class="text-center"> The authors of this website do not claim the ownership of the images within the website and do not attempt to use them for commercial purposes. </p>
+  <p class="text-center"> Copyright 2022 done by AITU BD-2101 students: Nursat Kenges, Nurlybek Omen, Almas Aitken</p>
 </section>
 
 
