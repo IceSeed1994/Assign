@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlmaTrip</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><body>
-    <link href="./style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Oswald&family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0b8c8db446.js" crossorigin="anonymous"></script>
+
+    <body>
+        <link href="./style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Oswald&family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <style src="script.js"></style>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
@@ -25,160 +29,169 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-  var opacity = 0;
-  var intervalID = 0;
-  window.onload = fadeIn;
+    var opacity = 0;
+    var intervalID = 0;
+    window.onload = fadeIn;
 
-  function fadeIn() {
-      setInterval(show, 30);
-  }
+    function fadeIn() {
+        setInterval(show, 30);
+    }
 
-  function show() {
-      var body = document.getElementById("body");
-      opacity = Number(window.getComputedStyle(body)
-                       .getPropertyValue("opacity"));
-      if (opacity < 1) {
-          opacity = opacity + 0.05;
-          body.style.opacity = opacity
-      } else {
-          clearInterval(intervalID);
-      }
-  }
+    function show() {
+        var body = document.getElementById("body");
+        opacity = Number(window.getComputedStyle(body)
+            .getPropertyValue("opacity"));
+        if (opacity < 1) {
+            opacity = opacity + 0.05;
+            body.style.opacity = opacity
+        } else {
+            clearInterval(intervalID);
+        }
+    }
 </script>
 
-<script> 
-  $(document).ready(function(){
-    
-      $("a").on('click', function(event) {
-    
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function(){
-            window.location.hash = hash;
-          });
-        } 
-      });
+<script>
+    $(document).ready(function() {
+
+        $("a").on('click', function(event) {
+
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function() {
+                    window.location.hash = hash;
+                });
+            }
+        });
     });
-      </script>
+</script>
+
 <body id="body">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand mx-lg-5" href="#" id="title">
-            <img src="./mnt.png" alt="" width="38" height="32" class="d-inline-block align-text-top">
-            AlmaTrip
-          </a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand mx-lg-5" href="#" id="title">
+                <img src="./mnt.png" alt="" width="38" height="32" class="d-inline-block align-text-top"> AlmaTrip
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button> 
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto" id="navlist">
-              <li class="nav-item">
-                <a class="nav-link active px-4" aria-current="page" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-4" href="#tours">Tours</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-4" href="#place">Places</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-4" href="#gal">Gallery</a>
-              </li>
-            </ul>
-          </div>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="navlist">
+                    <li class="nav-item">
+                        <a class="nav-link active px-4" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#tours">Tours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#place">Places</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#gal">Gallery</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
 
-<header class="banner w-100 text-center d-flex align-items-center" id="home"> 
-    <div class="card-transparent text-center col align-self-center" style="background-color: beige; opacity: 0.75;">
-        <div class="card-body pb-3">
-          <h2 class="card-title m-5 fw-bold" style="font-size: 4vmin;">Explore Almaty</h2>
-          <div class="line"></div>
-          <h1 class="card-text mt-5 fw-bold" style="font-size: 7vmin;">The Beauty of Kazakhstan</h1>
-          <a href="#" class="ctn mb-5">About Us</a>
-          <div class="empty mt-3"> </div>
+    <header class="banner w-100 text-center d-flex align-items-center" id="home">
+        <div class="card-transparent text-center col align-self-center" style="background-color: beige; opacity: 0.75;">
+            <div class="card-body pb-3">
+                <h2 class="card-title m-5 fw-bold" style="font-size: 4vmin;">Explore Almaty</h2>
+                <div class="line"></div>
+                <h1 class="card-text mt-5 fw-bold" style="font-size: 7vmin;">The Beauty of Kazakhstan</h1>
+                <a href="#" class="ctn mb-5">About Us</a>
+                <div class="empty mt-3"> </div>
+            </div>
         </div>
-      </div>
-</header>
+    </header>
 
 
-<section class="events" id="tours">
-  <div class="title">
-      <h1 class="text-center"> Upcoming events </h1>
-      <div class="line mt-4"></div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <div class="card border-0">
-          <img src="./kaindy.jpg" alt="event1 pic" class="card-img-top rounded mx-auto d-block">
-          <div class="card-body">
-            <h4 class="card title border-0"> Trip to Kaiyndy Lake </h4>
-            <p class="card-text">On the territory of Kainda there are several popular locations that you can visit. These include the observation deck "Panorama" where a picturesque view of the expanse of water opens, as well as the "Gate of Desires".</p>
-            <a href="#" class="ctn my-auto"> Learn more </a>
-      </div>
-    </div>
-  </div>
-      <div class="col">
-        <div class="card border-0">
-          <img src="./plato.jpg" alt="event2 pic" class="card-img-top rounded mx-auto d-block">
-          <div class="card-body">
-            <h4 class="card title border-0"> Trip to Assy Plateau </h4>
-            <p class="card-text text-justify">The main feature of the natural location is the Assy-Turgen astrophysical observatory (2750 meters), which was built in 1975. The structure was built here due to the ideal astroclimate and the absence of light pollution.</p>
-            <a href="#" class="ctn mt-1"> Learn more </a>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-</div>
-</section> 
+    <section class="events" id="tours">
+        <div class="title">
+            <h1 class="text-center"> Upcoming events </h1>
+            <div class="line mt-4"></div>
+        </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="./kaindy.jpg" alt="event1 pic" class="card-img-top rounded mx-auto d-block">
+                        <div class="card-body">
+                            <h4 class="card title border-0"> Trip to Kaiyndy Lake </h4>
+                            <p class="card-text">On the territory of Kainda there are several popular locations that you can visit. These include the observation deck "Panorama" where a picturesque view of the expanse of water opens, as well as the "Gate of Desires".</p>
+                            <a href="#" class="ctn my-auto"> Learn more </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="./plato.jpg" alt="event2 pic" class="card-img-top rounded mx-auto d-block">
+                        <div class="card-body">
+                            <h4 class="card title border-0"> Trip to Assy Plateau </h4>
+                            <p class="card-text text-justify">The main feature of the natural location is the Assy-Turgen astrophysical observatory (2750 meters), which was built in 1975. The structure was built here due to the ideal astroclimate and the absence of light pollution.</p>
+                            <a href="#" class="ctn mt-1"> Learn more </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
 
 
-<section class="places container-fluid d-flex align-items-left text-center" id="place">
-  <div class="card-transparent ms-lg-4 col-lg-5" style="background-color: beige; opacity: 0.75;">
-    <div class="card-body align-items-center">
-      <h1 class="card-title text-center" style="font-size: 7vmin;">Charyn Canyon</h1>
-      <div class="line"></div>
-      <p class="text-justify" style="margin-bottom: 20px;"> This is a picturesque natural area that amazes with its unearthly landscapes. The depth of the canyon is 200 m. The height of the steep mountains of the canyon reaches 150-300 m. The canyon itself is a natural monument, composed of sedimentary rocks, whose age reaches 12 million years. The landscapes here are truly amazing. At sunset, when the sun goes below the horizon, the Charyn canyon turns scarlet, pink and orange. There is silence all around, and only from below you can hear how the stormy streams of the Charyn River beat against the sheer cliffs. This spectacle will not leave anyone indifferent. </p>
-      <a href="#" class="ctn">Learn more</a>
-      <div class="empty mt-3"> </div>
-    </div>
-  </div>
-</section>
+    <section class="places container-fluid d-flex align-items-left text-center" id="place">
+        <div class="card-transparent ms-lg-4 col-lg-5" style="background-color: beige; opacity: 0.75;">
+            <div class="card-body align-items-center">
+                <h1 class="card-title text-center" style="font-size: 7vmin;">Charyn Canyon</h1>
+                <div class="line"></div>
+                <p class="text-justify" style="margin-bottom: 20px;"> This is a picturesque natural area that amazes with its unearthly landscapes. The depth of the canyon is 200 m. The height of the steep mountains of the canyon reaches 150-300 m. The canyon itself is a natural monument, composed of sedimentary
+                    rocks, whose age reaches 12 million years. The landscapes here are truly amazing. At sunset, when the sun goes below the horizon, the Charyn canyon turns scarlet, pink and orange. There is silence all around, and only from below you
+                    can hear how the stormy streams of the Charyn River beat against the sheer cliffs. This spectacle will not leave anyone indifferent. </p>
+                <a href="#" class="ctn">Learn more</a>
+                <div class="empty mt-3"> </div>
+            </div>
+        </div>
+    </section>
 
 
-<section class="gallery" id="gal">
-  <div class="row">
-    <div class="card text-center border-0" style="width: 30rem;">
-      <div class="card-body">
-        <h1>Gallery: What You Can Expect</h1>
-        <div class="line my-4"></div>
-        <p style="text-align: justify; margin-right: 20px;" class="mb-3"> GoAlmaty opens up new horizons for everyone who wants to expand their horizons and see Kazakhstan. Our company will help you rediscover this beauty of the world, take a break from the gray life and become the main character of a fairy tale called "journey".</p>
-        <a href="#" class="ctn"> See More </a>      
-      </div>
-    </div>
-          <div class="col d-flex flex-column"> 
-          <div class="image-gallery">
-              <img src="./camp1.png" alt=""> 
-              <img src="./camp2.jpg" alt=""> 
-              <img src="./camp3.jpg" alt=""> 
-              <img src="./pik1.webp" alt=""> 
-          </div>
-      </div>
-  </div>
-</section>
+    <section class="gallery" id="gal">
+        <div class="row">
+            <div class="card text-center border-0" style="width: 30rem;">
+                <div class="card-body">
+                    <h1>Gallery: What You Can Expect</h1>
+                    <div class="line my-4"></div>
+                    <p style="text-align: justify; margin-right: 20px;" class="mb-3"> GoAlmaty opens up new horizons for everyone who wants to expand their horizons and see Kazakhstan. Our company will help you rediscover this beauty of the world, take a break from the gray life and become the main character of a fairy
+                        tale called "journey".</p>
+                    <a href="#" class="ctn"> See More </a>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <i class='fas fa-angle-left' id="prevBtn"></i>
+                <i class='fas fa-angle-right' id="nextBtn"></i>
+                <div class="carousel-slide">
+                    <img src="image4.png" id="lastClone" alt="">
+                    <img src="image1.jpg" alt="">
+                    <img src="image2.jpg" alt="">
+                    <img src="image3.jpg" alt="">
+                    <img src="image4.png" alt="">
+                    <img src="image1.jpg" id="firstClone" alt="">
+                </div>
+            </div>
 
-<section class="footer">
-  <p class="text-center"> The authors of this website do not claim the ownership of the images within the website and do not attempt to use them for commercial purposes. </p>
-  <p class="text-center"> Copyright 2022 done by AITU BD-2101 students: Nursat Kenges, Nurlybek Omen, Almas Aitken</p>
-</section>
+            <script src="script.js"></script>
+    </section>
+
+    <section class="footer">
+        <p class="text-center"> The authors of this website do not claim the ownership of the images within the website and do not attempt to use them for commercial purposes. </p>
+        <p class="text-center"> Copyright 2022 done by AITU BD-2101 students: Nursat Kenges, Nurlybek Omen, Almas Aitken</p>
+    </section>
 
 
 </body>
+
 </html>
