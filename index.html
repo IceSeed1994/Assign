@@ -27,7 +27,6 @@
   // .fromTo(bann, 1.2, {width: "100%"}, {width: "80%", ease: Power2.easeInOut})
   </script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script type="text/javascript">
     var opacity = 0;
     var intervalID = 0;
@@ -49,6 +48,31 @@
         }
     }
 </script>
+
+<script>
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+
+    btn.addEventListener("click", function() {
+        if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+        } else {
+            video.pause();
+            btn.innerHTML = "Play";
+        }
+    });
+    /*function playPause() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }*/
+</script>
+
 
 <script>
     $(document).ready(function() {
@@ -158,6 +182,20 @@
         </div>
     </section>
 
+    <div class="videobanner">
+        <h1 class="text-center">Big Almaty Lake preview</h1>
+        <div class="line my-4" style="margin-bottom: 100px;"></div>
+        <div class="overlaying">
+            <h3>Look ahead of what is waiting for you</h3>
+            <p> Like the vast majority of lakes in the Tien Shan mountains, the lake appeared as a result from number of earthquakes. Above the lake rise the three main peaks that can be seen from the northern end of the dam: the peak of Councils (4317 m)
+                - on south-east, the peak Ozerny (4110 m) - on the south and the peak Tourist (3954 m) - on the south-west of the lake.
+            </p>
+            <button id="myBtn" type="button">Pause</button>
+        </div>
+        <video autoplay muted loop id="myVideo" style="margin-top: 40px; display: block; width: 100%; height: 50%;">
+          <source src="myvideo.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <section class="gallery" id="gal">
         <div class="row">
