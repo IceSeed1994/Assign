@@ -10,12 +10,36 @@ body {
     opacity: 0.1;
 }
 
+.videobanner {
+    margin: auto;
+}
+
 .dark-mode {
     background: black;
 }
 
-#navlist {
-    margin-right: 100px;
+.overlaying {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 50px;
+    margin-top: 350px;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
 }
 
 section {
@@ -167,7 +191,7 @@ p {
 }
 
 .carousel-container {
-    width: 55%;
+    width: 45%;
     margin: auto;
     border: 5px solid black;
     overflow: hidden;
@@ -176,7 +200,7 @@ p {
 
 .carousel-slide {
     display: flex;
-    width: 410px;
+    width: 500px;
     height: 400px;
 }
 
