@@ -8,23 +8,53 @@ html {
 
 body {
     opacity: 0.1;
+    font-family: 'Poppins', sans-serif;
 }
 
 .videobanner {
+    display: flex;
+    justify-items: flex-end;
     margin: auto;
+    width: 80%;
+    height: 80%;
 }
 
-.dark-mode {
-    background: black;
+#tours img {
+    opacity: 0.5;
 }
 
 .overlaying {
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
-    width: 100%;
-    padding: 50px;
-    margin-top: 350px;
+    width: 80%;
+    padding: 30px;
+    margin-top: 450px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    .overlaying {
+        display: none;
+    }
+    .overlaying button {
+        display: none;
+    }
+    .places .card-transparent {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 85%;
+        width: 100%;
+        font-size: 4vmin;
+        padding: 1px;
+    }
+    .card-body button {
+        margin: 0px;
+    }
+    #plac {
+        padding: 0px;
+    }
 }
 
 #myBtn {
@@ -40,6 +70,10 @@ body {
 #myBtn:hover {
     background: #ddd;
     color: black;
+}
+
+#navlist {
+    margin-right: 100px;
 }
 
 section {
@@ -191,7 +225,8 @@ p {
 }
 
 .carousel-container {
-    width: 45%;
+    width: 500px;
+    height: 400px;
     margin: auto;
     border: 5px solid black;
     overflow: hidden;
