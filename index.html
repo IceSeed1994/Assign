@@ -20,12 +20,6 @@
 <style src="script.js"></style>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
-<!-- <script>
-  const t1 = new TimeLineMax();
-  const banner = document.querySelector("#home");
-  t1.fromTo(banner, 1, {height: "0%"}, {height: "80%", ease: Power2.easeInOut})
-  // .fromTo(bann, 1.2, {width: "100%"}, {width: "80%", ease: Power2.easeInOut})
-  </script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
     var opacity = 0;
@@ -99,10 +93,10 @@
             <a class="navbar-brand mx-lg-5" href="#" id="title">
                 <img src="./mnt.png" alt="" width="38" height="32" class="d-inline-block align-text-top"> AlmaTrip
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ms-auto" id="navlist">
                     <li class="nav-item">
                         <a class="nav-link active px-4" aria-current="page" href="#home">Home</a>
@@ -127,11 +121,37 @@
                 <h2 class="card-title m-5 fw-bold" style="font-size: 4vmin;">Explore Almaty</h2>
                 <div class="line"></div>
                 <h1 class="card-text mt-5 fw-bold" style="font-size: 7vmin;">The Beauty of Kazakhstan</h1>
-                <a href="#" class="ctn mb-5">About Us</a>
+                <button type="button" class="ctn mx-auto d-block mt-5" data-bs-toggle="modal" data-bs-target="#modalForm" style="background-color: #fc036b; border: #fc036b;">
+                Learn more
+            </button>
                 <div class="empty mt-3"> </div>
             </div>
         </div>
     </header>
+
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">We will contact you</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Mobile phone number: </label>
+                            <input type="text" class="form-control" id="username" name="number" placeholder="+7" />
+                        </div>
+                        <div class="modal-footer d-block">
+                            <button type="submit" class="btn btn-warning float-end" style="background-color: #fc036b; color: white;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
 
 
     <section class="events" id="tours">
@@ -143,21 +163,26 @@
             <div class="row">
                 <div class="col">
                     <div class="card border-0">
-                        <img src="./kaindy.jpg" alt="event1 pic" class="card-img-top rounded mx-auto d-block">
+                        <img src="./kaindy.jpg" alt="event1 pic" class="card-img-top rounded mx-auto d-block" id="img1">
                         <div class="card-body">
                             <h4 class="card title border-0"> Trip to Kaiyndy Lake </h4>
                             <p class="card-text">On the territory of Kainda there are several popular locations that you can visit. These include the observation deck "Panorama" where a picturesque view of the expanse of water opens, as well as the "Gate of Desires".</p>
-                            <a href="#" class="ctn my-auto"> Learn more </a>
+                            <button type="button" class="ctn mx-auto d-block mt-5" data-bs-toggle="modal" data-bs-target="#modalForm" style="background-color: #fc036b; border: #fc036b;">
+                    Learn more
+                </button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card border-0">
-                        <img src="./plato.jpg" alt="event2 pic" class="card-img-top rounded mx-auto d-block">
+                        <img src="./plato.jpg" alt="event2 pic" class="card-img-top rounded mx-auto d-block" id="img2">
                         <div class="card-body">
                             <h4 class="card title border-0"> Trip to Assy Plateau </h4>
                             <p class="card-text text-justify">The main feature of the natural location is the Assy-Turgen astrophysical observatory (2750 meters), which was built in 1975. The structure was built here due to the ideal astroclimate and the absence of light pollution.</p>
-                            <a href="#" class="ctn mt-1"> Learn more </a>
+                            <button type="button" class="ctn mx-auto d-block mt-5" data-bs-toggle="modal" data-bs-target="#modalForm" style="background-color: #fc036b; border: #fc036b;">
+                    Learn more
+                </button>
                         </div>
                     </div>
                 </div>
@@ -166,36 +191,77 @@
         </div>
     </section>
 
+    <script>
+        img1 = document.getElementById("img1");
+        img2 = document.getElementById("img2");
+        img1.addEventListener("mouseover", mouseOver1);
+        img1.addEventListener("mouseout", mouseOut1);
+        img2.addEventListener("mouseover", mouseOver2);
+        img2.addEventListener("mouseout", mouseOut2);
 
+        function mouseOver1() {
+            img1.style.opacity = 1;
+        }
+
+        function mouseOut1() {
+            img1.style.opacity = 0.5;
+        }
+
+        function mouseOver2() {
+            img2.style.opacity = 1;
+        }
+
+        function mouseOut2() {
+            img2.style.opacity = 0.5;
+        }
+    </script>
 
     <section class="places container-fluid d-flex align-items-left text-center" id="place">
-        <div class="card-transparent ms-lg-4 col-lg-5" style="background-color: beige; opacity: 0.75;">
-            <div class="card-body align-items-center">
+        <div class="card-transparent ms-lg-5 col-lg-5" style="background-color: beige; opacity: 0.75;">
+            <div class="card-body align-items-center" id="plac">
                 <h1 class="card-title text-center" style="font-size: 7vmin;">Charyn Canyon</h1>
                 <div class="line"></div>
-                <p class="text-justify" style="margin-bottom: 20px;"> This is a picturesque natural area that amazes with its unearthly landscapes. The depth of the canyon is 200 m. The height of the steep mountains of the canyon reaches 150-300 m. The canyon itself is a natural monument, composed of sedimentary
-                    rocks, whose age reaches 12 million years. The landscapes here are truly amazing. At sunset, when the sun goes below the horizon, the Charyn canyon turns scarlet, pink and orange. There is silence all around, and only from below you
-                    can hear how the stormy streams of the Charyn River beat against the sheer cliffs. This spectacle will not leave anyone indifferent. </p>
-                <a href="#" class="ctn">Learn more</a>
-                <div class="empty mt-3"> </div>
+                <p class="text-justify"> This is a picturesque natural area that amazes with its unearthly landscapes. The depth of the canyon is 200 m. The height of the steep mountains of the canyon reaches 150-300 m. The canyon itself is a natural monument, composed of sedimentary
+                    rocks, whose age reaches 12 million years. The landscapes here are truly amazing. </p>
+                <button type="button" class="ctn" data-bs-toggle="modal" data-bs-target="#modalForm" style="background-color: #fc036b; border: #fc036b; margin: 0px;">
+              Learn more
+          </button>
             </div>
         </div>
     </section>
 
+    <h1 class="text-center">Camping preview</h1>
+    <div class="line my-4" style="margin-bottom: 100px;"></div>
+
     <div class="videobanner">
-        <h1 class="text-center">Big Almaty Lake preview</h1>
-        <div class="line my-4" style="margin-bottom: 100px;"></div>
         <div class="overlaying">
             <h3>Look ahead of what is waiting for you</h3>
-            <p> Like the vast majority of lakes in the Tien Shan mountains, the lake appeared as a result from number of earthquakes. Above the lake rise the three main peaks that can be seen from the northern end of the dam: the peak of Councils (4317 m)
-                - on south-east, the peak Ozerny (4110 m) - on the south and the peak Tourist (3954 m) - on the south-west of the lake.
-            </p>
-            <button id="myBtn" type="button">Pause</button>
+            <p> Immerse into cozy bonfire atmosphere </p>
+            <button id="myBtn" type="button" onclick="mute()">Unmute</button>
         </div>
         <video autoplay muted loop id="myVideo" style="margin-top: 40px; display: block; width: 100%; height: 50%;">
-          <source src="myvideo.mp4" type="video/mp4">
+          <source src="bonfire.mp4" type="video/mp4">
         </video>
     </div>
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+        video.addEventListener("mute", onclick);
+
+        function mute() {
+            if (video.muted == true) {
+                video.muted = false;
+                btn.innerHTML = "Mute";
+            } else {
+                video.muted = true;
+                btn.innerHTML = "Unmute";
+            }
+        }
+    </script>
+
+    <div class="line" style="margin-top: 50px; margin-bottom: 30px;"></div>
+
 
     <section class="gallery" id="gal">
         <div class="row">
@@ -211,13 +277,15 @@
             <div class="carousel-container">
                 <i class='fas fa-angle-left' id="prevBtn"></i>
                 <i class='fas fa-angle-right' id="nextBtn"></i>
-                <div class="carousel-slide">
-                    <img src="image4.png" id="lastClone" alt="">
-                    <img src="image1.jpg" alt="">
-                    <img src="image2.jpg" alt="">
-                    <img src="image3.jpg" alt="">
-                    <img src="image4.png" alt="">
-                    <img src="image1.jpg" id="firstClone" alt="">
+                <div class="col d-flex flex-column">
+                    <div class="carousel-slide">
+                        <img src="image4.png" id="lastClone" alt="">
+                        <img src="image1.jpg" alt="">
+                        <img src="image2.jpg" alt="">
+                        <img src="image3.jpg" alt="">
+                        <img src="image4.png" alt="">
+                        <img src="image1.jpg" id="firstClone" alt="">
+                    </div>
                 </div>
             </div>
 
